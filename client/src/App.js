@@ -3,6 +3,11 @@ import Header from './components/Header';
 import Stats from './components/Stats'
 import Table from './components/Table'
 import BarChart from './components/BarChart';
+import ProfilePic from './components/ProfilePic';
+import PieChart from './components/PieChart';
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+import './App.css'
 
 function App() {
   const [backendData,setBackendData] = useState([{}]);
@@ -21,11 +26,29 @@ const handleMonthChange = (value)=>{
   setSelectedMonth(value);
 }
 return (
-  <div>
+  <div className='container-fluid p-0'>
      <Header onMonthChange={handleMonthChange}/>
-     <Stats data = {backendData} selectedMonth={selectedMonth}/>
-     <Table data = {backendData} selectedMonth={selectedMonth}/>
-     <BarChart data = {backendData}/>
+     <div className='row g-2'>
+      <div className='col-md-4'>
+        <ProfilePic />
+      </div>
+      <div className='col-md-8'>
+        <Stats data = {backendData} selectedMonth={selectedMonth}/>
+      </div>
+      </div>
+      <div className="row g-2">
+        <div className="col-md-6">
+          <BarChart data={backendData} />
+        </div>
+        <div className="col-md-6">
+          <PieChart data={backendData} />
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-12">
+          <Table data={backendData} selectedMonth={selectedMonth} />
+        </div>
+      </div>
   </div>
 )
 }
