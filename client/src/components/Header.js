@@ -23,7 +23,7 @@ function Header({onMonthChange}) {
   };
   return (
     <div>
-        <h1>Selected Month : {months[selectedMonth]}</h1>
+        <h1 className='dispaly-1'>Selected Month : <span className='text-muted display-4'>{months[selectedMonth]}</span></h1>
         <nav className='navbar navbar-expand-lg bg-warning'>
             <div className='container-fluid'>
                 <select className='form-select form-select-lg' aria-label=".form-select-lg example" name='Select Month' style={{width:"fit-content"}} value={selectedMonth} onChange={handleMonthChange}>
