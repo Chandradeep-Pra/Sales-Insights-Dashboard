@@ -29,12 +29,39 @@ function Stats({data, selectedMonth}) {
     
     
   return (
-    <div>
-        <h1>Total number of unsold items : {totalItemUnslod}</h1>
-        <h1>Total amount of unsold items : {totalPriceUnsold}</h1>
-        <h1>Total sale amount : {totalPriceSold}</h1>
-        <h1>Total item sold : {totalItemSold}</h1>
-        <h1></h1>
+    <div className="row g-3 justify-content-center">
+      <div className="col-md-3 col-sm-6 text-center">
+        <div className="card p-3 stats-box d-flex align-items-center justify-content-center">
+          <div className="text-center">
+            <p className="fs-3 mb-0">{totalItemUnslod}</p>
+            <p className="text-muted">Unsold Items</p>
+          </div>
+        </div>
+      </div>
+      <div className="col-md-3 col-sm-6 text-center">
+        <div className="card p-3 stats-box d-flex align-items-center justify-content-center">
+          <div className="text-center">
+            <p className="fs-3 mb-0">{totalPriceUnsold.toFixed(2)}</p>
+            <p className="text-muted">Unsold Amount</p>
+          </div>
+        </div>
+      </div>
+      <div className="col-md-3 col-sm-6 text-center">
+        <div className="card p-3 stats-box d-flex align-items-center justify-content-center">
+          <div className="text-center">
+            <p className="fs-3 mb-0">{totalPriceSold.toFixed(2)}</p>
+            <p className="text-muted">Total Sales</p>
+          </div>
+        </div>
+      </div>
+      <div className="col-md-3 col-sm-6 text-center">
+        <div className="card p-3 stats-box d-flex align-items-center justify-content-center">
+          <div className="text-center">
+            <p className="fs-3 mb-0">{totalItemSold}</p>
+            <p className="text-muted">Items Sold</p>
+          </div>
+        </div>
+      </div>
     </div>
   )
 }
